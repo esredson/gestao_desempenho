@@ -15,6 +15,8 @@ Ao executar o script, a pessoa informa o ano, o mês, a quinzena e o total de ho
 - [BeautifulSoup](https://pypi.org/project/beautifulsoup4/)
   - [Crie um ambiente virtual](https://www.freecodecamp.org/news/how-to-setup-virtual-environments-in-python/) pra instalar essa lib, se achar melhor.
   - Para instalar: `pip install beautifulsoup4` 
+- [Requests](https://pypi.org/project/requests/)
+  - Para instalar: `pip install requests` 
 
 ### Preparação inicial
 
