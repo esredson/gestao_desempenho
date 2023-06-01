@@ -1,4 +1,4 @@
-import argparse, datetime, json, random, requests
+import argparse, datetime, json, random, requests, urllib3
 from bs4 import BeautifulSoup
 
 CAMPO_GRUPO_GESTOR = 'og_group_ref[und][0][default]'
@@ -305,6 +305,7 @@ def gerar_posts(sessao, props, args, ids, atividades_realizadas):
          assert "foi criado" in res.text, "Post não foi bem sucedido"
             
 def main():
+   urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
    sessao = requests.Session()
    
    args = obter_args()
