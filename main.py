@@ -194,7 +194,7 @@ def obter_atividades_do_servidor(sessao, props, id_servidor):
    for opt in soup.find_all('option'):
       if opt['value'] == '_none':
          continue
-      key = opt.get_text(strip=True).split(f"  -  {props['secretaria']}/{props['coordenadoria']}")[0]
+      key = opt.get_text(strip=True).split("  -  ")[0]
       value = opt['value']
 
       atividades[key] = value
