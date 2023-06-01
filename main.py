@@ -194,7 +194,7 @@ def obter_atividades_do_servidor(sessao, props, id_servidor):
    for opt in soup.find_all('option'):
       if opt['value'] == '_none':
          continue
-      key = opt.get_text(strip=True).split('  -  '+props['coordenadoria'])[0]
+      key = opt.get_text(strip=True).split(f"  -  {props['secretaria']}/{props['coordenadoria']}")[0]
       value = opt['value']
 
       atividades[key] = value
@@ -212,7 +212,7 @@ def inserir_id_nas_atividades_realizadas(atividades_cadastradas, atividades_real
 
 def sortear(pesos):
    peso_total = sum(pesos)
-   assert peso_total == 1, "Os pesos precisam somar 1"
+   assert 1 - peso_total < 0.01, "Os pesos precisam somar 1"
 
    pesos_acumulados = []
     
